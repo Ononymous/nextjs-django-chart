@@ -10,17 +10,17 @@ const HomePage = () => {
       <nav className="bg-blue-600 p-4">
         <h1 className="text-white text-3xl font-bold">Charts Dashboard</h1>
       </nav>
-      <div className="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-        <div className="bg-white p-4 rounded shadow">
+      <div className="p-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-7">
+        <div className="bg-white p-7 rounded shadow h-96">
           <LineChart />
         </div>
-        <div className="bg-white p-4 rounded shadow">
+        <div className="bg-white p-7 rounded shadow h-96">
           <BarChart />
         </div>
-        <div className="bg-white p-4 rounded shadow">
+        <div className="bg-white p-7 rounded shadow h-96">
           <PieChart />
         </div>
-        <div className="bg-white p-4 rounded shadow">
+        <div className="bg-white p-7 rounded shadow h-96">
           <CandleStick />
         </div>
       </div>

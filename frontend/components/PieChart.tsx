@@ -7,10 +7,10 @@ export default function PieChart({ data, labels }: { data: number[]; labels: str
     chart: {
       id: 'basic-pie',
       toolbar: {
-          show: false,
+        show: false,
       },
       zoom: {
-          enabled: false,
+        enabled: false,
       },
     },
     labels: labels,
