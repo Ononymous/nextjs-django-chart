@@ -38,7 +38,7 @@ export const pieChartSlice = createSlice({
                 state.loading = true
                 state.error = null
             })
-            .addCase(fetchPieChart.fulfilled, (state, action: PayloadAction<any>) => {
+            .addCase(fetchPieChart.fulfilled, (state, action: PayloadAction<object>) => {
                 state.value = action.payload
                 state.loading = false
             })

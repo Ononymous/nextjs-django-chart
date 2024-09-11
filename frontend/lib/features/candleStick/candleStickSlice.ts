@@ -38,7 +38,7 @@ export const candleStickSlice = createSlice({
                 state.loading = true
                 state.error = null
             })
-            .addCase(fetchCandleStick.fulfilled, (state, action: PayloadAction<any>) => {
+            .addCase(fetchCandleStick.fulfilled, (state, action: PayloadAction<object>) => {
                 state.value = action.payload
                 state.loading = false
             })

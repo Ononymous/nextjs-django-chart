@@ -38,7 +38,7 @@ export const lineChartSlice = createSlice({
                 state.loading = true
                 state.error = null
             })
-            .addCase(fetchLineChart.fulfilled, (state, action: PayloadAction<any>) => {
+            .addCase(fetchLineChart.fulfilled, (state, action: PayloadAction<object>) => {
                 state.value = action.payload
                 state.loading = false
             })

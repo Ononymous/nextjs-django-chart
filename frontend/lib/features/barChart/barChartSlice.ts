@@ -38,7 +38,7 @@ export const barChartSlice = createSlice({
 				state.loading = true
 				state.error = null
 			})
-			.addCase(fetchBarChart.fulfilled, (state, action: PayloadAction<any>) => {
+			.addCase(fetchBarChart.fulfilled, (state, action: PayloadAction<object>) => {
 				state.value = action.payload
 				state.loading = false
 			})

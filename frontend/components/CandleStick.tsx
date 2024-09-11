@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import React, { useEffect } from 'react';
+import React from 'react';
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 export default function CandleStick({ data }: { data: { x: string; open: number; high: number; low: number; close: number }[]}) {
