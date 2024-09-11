@@ -1,25 +1,26 @@
 'use client'
-import React, { useEffect } from 'react'
+import React, { use, useEffect } from 'react'
 import { useAppSelector, useAppDispatch } from '@/lib/hooks'
 import { fetchCandleStick, selectCandleStick, selectCandleStickError, selectCandleStickLoading } from '@/lib/features/candleStick/candleStickSlice'
 
+import CandleStick from './CandleStick'
+
 export default function CandleStickBox () {
   const dispatch = useAppDispatch()
-  const data = useAppSelector(selectCandleStick)
-  const loading = useAppSelector(selectCandleStickLoading)
-  const error = useAppSelector(selectCandleStickError)
+  const data = useAppSelector((state) => selectCandleStick(state) as { data: { x: string, open: number, high: number, low: number, close: number }[] })
+  const loading = useAppSelector((state) => selectCandleStickLoading(state) as boolean)
+  const error = useAppSelector((state) => selectCandleStickError(state) as string)
 
   useEffect(() => {
     dispatch(fetchCandleStick())
   }, [dispatch])
 
-  if (loading) return <div>Loading...</div>
-  if (error) return <div>Error: {error}</div>
+  if (loading) return <div className='h-96 flex items-center justify-center'>Loading...</div>
+  if (error) return <div className='h-96 flex items-center justify-center'>Error: {error}</div>
 
   return (
     <div>
-      <h1>CandleStick Data</h1>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      <CandleStick data={data.data}/>
     </div>
   )
 }
