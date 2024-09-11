@@ -1,8 +1,9 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createAppAsyncThunk } from '@/app/withTypes'
 import type { RootState } from '@/lib/store'
 
 // Define a type for the slice state
-export interface pieChartState {
+interface pieChartState {
     value: object
     loading: boolean
     error: string | null
@@ -15,7 +16,7 @@ const initialState: pieChartState = {
     error: null
 }
 
-export const fetchPieChart = createAsyncThunk(
+export const fetchPieChart = createAppAsyncThunk(
     'pieChart/fetchPieChart',
     async () => {
         const response = await fetch('http://127.0.0.1:8000/api/pie-chart-data/')

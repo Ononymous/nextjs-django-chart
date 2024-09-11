@@ -1,8 +1,9 @@
-import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createAppAsyncThunk } from '@/app/withTypes'
 import type { RootState } from '@/lib/store'
 
 // Define a type for the slice state
-export interface lineChartState {
+interface lineChartState {
     value: object,
     loading: boolean,
     error: string | null
@@ -15,7 +16,7 @@ const initialState: lineChartState = {
     error: null
 }
 
-export const fetchLineChart = createAsyncThunk(
+export const fetchLineChart = createAppAsyncThunk(
     'lineChart/fetchLineChart',
     async () => {
         const response = await fetch('http://127.0.0.1:8000/api/line-chart-data/')
