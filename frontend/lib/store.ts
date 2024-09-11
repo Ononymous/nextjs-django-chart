@@ -1,8 +1,19 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import { lineChartReducer } from './features/lineChart/lineChartSlice'
+import { barChartReducer } from './features/barChart/barChartSlice'
+import { pieChartReducer } from './features/pieChart/pieChartSlice'
+import { candleStickReducer } from './features/candleStick/candleStickSlice'
+
+const rootReducer = combineReducers({
+  lineChart: lineChartReducer,
+  barChart: barChartReducer,
+  pieChart: pieChartReducer,
+  candleStick: candleStickReducer
+})
 
 export const makeStore = () => {
   return configureStore({
-    reducer: {},
+    reducer: rootReducer,
   })
 }
 

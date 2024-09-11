@@ -19,7 +19,7 @@ const initialState: candleStickState = {
 export const fetchCandleStick = createAppAsyncThunk(
     'candleStick/fetchCandleStick',
     async () => {
-        const response = await fetch('http://127.0.0.1:8000/api/candle-stick-data/')
+        const response = await fetch('http://127.0.0.1:8000/api/candlestick-data/')
         return response.json()
     }
 )
@@ -50,3 +50,5 @@ export const candleStickSlice = createSlice({
 export const selectCandleStick = (state: RootState) => state.candleStick.value
 export const selectCandleStickLoading = (state: RootState) => state.candleStick.loading
 export const selectCandleStickError = (state: RootState) => state.candleStick.error
+
+export const candleStickReducer = candleStickSlice.reducer

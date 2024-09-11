@@ -50,3 +50,5 @@ export const lineChartSlice = createSlice({
 export const selectLineChart = (state: RootState) => state.lineChart.value
 export const selectLineChartLoading = (state: RootState) => state.lineChart.loading
 export const selectLineChartError = (state: RootState) => state.lineChart.error
+
+export const lineChartReducer = lineChartSlice.reducer

@@ -50,3 +50,5 @@ export const pieChartSlice = createSlice({
 export const selectPieChart = (state: RootState) => state.pieChart.value
 export const selectPieChartLoading = (state: RootState) => state.pieChart.loading
 export const selectPieChartError = (state: RootState) => state.pieChart.error
+
+export const pieChartReducer = pieChartSlice.reducer

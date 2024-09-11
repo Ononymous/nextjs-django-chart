@@ -50,3 +50,5 @@ export const barChartSlice = createSlice({
 export const selectBarChart = (state: RootState) => state.barChart.value
 export const selectBarChartLoading = (state: RootState) => state.barChart.loading
 export const selectBarChartError = (state: RootState) => state.barChart.error
+
+export const barChartReducer = barChartSlice.reducer
