@@ -9,6 +9,7 @@ interface candleStickState {
     error: string | null
 }
 
+
 // Define the initial state using that type
 const initialState: candleStickState = {
     value: {data: []},
@@ -20,7 +21,8 @@ const initialState: candleStickState = {
 export const fetchCandleStick = createAppAsyncThunk(
     'candleStick/fetchCandleStick',
     async () => {
-        const response = await fetch('http://127.0.0.1:8000/api/candlestick-data/')
+        const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+        const response = await fetch(`${apiBaseUrl}/api/candlestick-data/`)
         return response.json()
     }
 )

@@ -9,6 +9,7 @@ interface pieChartState {
     error: string | null
 }
 
+
 // Define the initial state using that type
 const initialState: pieChartState = {
     value: { labels: [], data: [] },
@@ -20,7 +21,8 @@ const initialState: pieChartState = {
 export const fetchPieChart = createAppAsyncThunk(
     'pieChart/fetchPieChart',
     async () => {
-        const response = await fetch('http://127.0.0.1:8000/api/pie-chart-data/')
+        const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+        const response = await fetch(`${apiBaseUrl}/api/pie-chart-data/`)
         return response.json()
     }
 )

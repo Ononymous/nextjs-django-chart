@@ -9,6 +9,7 @@ interface barChartState {
 	error: string | null
 }
 
+
 // Define the initial state using that type
 const initialState: barChartState = {
 	value: {labels: [], data: []},
@@ -20,7 +21,8 @@ const initialState: barChartState = {
 export const fetchBarChart = createAppAsyncThunk(
 	'barChart/fetchBarChart',
 	async () => {
-		const response = await fetch('http://127.0.0.1:8000/api/bar-chart-data/')
+		const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+		const response = await fetch(`${apiBaseUrl}/api/bar-chart-data/`)
 		return response.json()
 	}
 )

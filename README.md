@@ -38,23 +38,28 @@ This project aims to display different types of charts (Line, Bar, Pie, Candlest
    git clone git@github.com:Ononymous/nextjs-django-chart.git
    cd nextjs-django-chart/backend
 ```
-2. **Set up a virtual environment** and install dependencies:
+2. **Optional:** Set up a virtual environment:
 ```bash
    python3 -m venv venv
    source venv/bin/activate
+```
+3. **Install dependencies**:
+```bash
    pip3 install djangorestframework django-cors-headers
 ```
-3. **Run Django migrations** for database:
+4. **Run Django migrations** for database:
 ```bash
    python3 manage.py migrate
 ```
-4. **Start the Django server**:
+5. **Start the Django server**:
 ```bash
    python3 manage.py runserver
 ```
 Now the Django API should be running at `http://127.0.0.1:8000/`.
 
 Try accessing `http://127.0.0.1:8000/api/bar-chart-data/` to see the data for the Bar chart.
+
+
 
 ### Frontend (Next.js)
 
