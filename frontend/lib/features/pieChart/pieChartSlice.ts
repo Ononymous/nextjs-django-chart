@@ -16,6 +16,7 @@ const initialState: pieChartState = {
     error: null
 }
 
+// Define a thunk to fetch the data from the server
 export const fetchPieChart = createAppAsyncThunk(
     'pieChart/fetchPieChart',
     async () => {

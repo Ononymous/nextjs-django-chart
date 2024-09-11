@@ -16,6 +16,7 @@ const initialState: lineChartState = {
     error: null
 }
 
+// Define a thunk to fetch the data from the server
 export const fetchLineChart = createAppAsyncThunk(
     'lineChart/fetchLineChart',
     async () => {

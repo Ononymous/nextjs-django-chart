@@ -16,6 +16,7 @@ const initialState: candleStickState = {
     error: null
 }
 
+// Define a thunk to fetch the data from the server
 export const fetchCandleStick = createAppAsyncThunk(
     'candleStick/fetchCandleStick',
     async () => {

@@ -16,6 +16,7 @@ const initialState: barChartState = {
 	error: null
 }
 
+// Define a thunk to fetch the data from the server
 export const fetchBarChart = createAppAsyncThunk(
 	'barChart/fetchBarChart',
 	async () => {

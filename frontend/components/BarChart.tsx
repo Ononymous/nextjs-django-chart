@@ -27,7 +27,7 @@ export default function BarChart({ data, labels }: { data: number[]; labels: str
 
   return (
     <div>
-      <Chart options={options} series={series} type="bar" height={350}/>
+      <Chart data-testid={"basic-bar"} options={options} series={series} type="bar" height={350}/>
     </div>
   );
 }
